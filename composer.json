@@ -9,6 +9,9 @@
         }
     ],
     "autoload": {
+        "files": [
+            "src/autoload.php"
+        ],
         "psr-4": {
             "ItalyStrap\\Debug\\": "src/Debug/"
         }
