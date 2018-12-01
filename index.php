@@ -43,4 +43,4 @@ function debug_example() {
 
 }
 
-add_action( 'plugins_loaded', 'debug_example' );
+add_action( 'wp_footer', 'debug_example' );
