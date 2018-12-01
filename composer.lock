@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a1eb810013dae86b41db44f3492b2fbf",
-    "content-hash": "e6013aabe42d7fd6728264f09195edc5",
+    "hash": "4793d6cca11bd1a873ebf99dd2711156",
+    "content-hash": "d6ddb4990b045d302ca0aac82cf44d7f",
     "packages": [
         {
             "name": "filp/whoops",
@@ -6210,8 +6210,6 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": "^5.3 || ^5.4 || ^5.5 || ^5.6 || ^7.0"
-    },
+    "platform": [],
     "platform-dev": []
 }
