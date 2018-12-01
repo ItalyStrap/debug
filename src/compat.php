@@ -1,5 +1,9 @@
 <?php
 
+if ( ! function_exists( 'add_action' ) ) {
+	return;
+}
+
 /**
  * Compat with UpDevTools from Tonya Mork
  */

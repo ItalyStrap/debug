@@ -1,13 +1,13 @@
 <?php
 /**
- * File for debuggind purpose.
+ * Helpers for debuggind purpose.
  *
- * It is loaded only if WP_DEBUG is defined && true
- *
- * @link https://ttalystrap.com
+ * @link https://italystrap.com
  *
  * @package ItalyStrap
  */
+
+use ItalyStrap\Debug\Debug;
 
 if ( ! function_exists( 'is_debug' ) ) {
 	/**
@@ -16,7 +16,7 @@ if ( ! function_exists( 'is_debug' ) ) {
 	 * @return bool Return true if ITALYSTRAP_BETA version is declared
 	 */
 	function is_debug() {
-		return (bool) defined( 'WP_DEBUG' ) && WP_DEBUG;
+		return Debug::is_debug();
 	}
 }
 
@@ -27,7 +27,7 @@ if ( ! function_exists( 'is_script_debug' ) ) {
 	 * @return bool Return true if ITALYSTRAP_BETA version is declared
 	 */
 	function is_script_debug() {
-		return (bool) defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
+		return Debug::is_script_debug();
 	}
 }
 
@@ -38,53 +38,18 @@ if ( ! function_exists( 'debug' ) ) {
 	 * @param mixed $log The input value.
 	 */
 	function debug( $log ) {
-		if ( ! is_debug() ) {
-			return;
-		}
-
-		error_log( print_r( $log, true ) );
-
-		// if ( is_array( $log ) || is_object( $log ) ) {
-		//  error_log( print_r( $log, true ) );
-		// } else {
-		//  error_log( $log );
-		// }
+		Debug::log( $log );
 	}
 }
 
 if ( ! function_exists( 'd' ) ) {
-	function d( $value = '' ) {
-		add_action( 'plugins_loaded', function () use ( $value ) {
-			if ( ! function_exists( 'd' ) ) {
-
-				echo "<pre>";
-				print_r( $value );
-				echo "</pre>";
-
-				debug( $value );
-
-				return;
-			}
-			\d( $value );
-		});
-	
+	function d( $log ) {
+		Debug::d( $log );
 	}
 }
 
 if ( ! function_exists( 'ddd' ) ) {
-	function ddd( $value = '' ) {
-		add_action( 'plugins_loaded', function () use ( $value ) {
-			if ( ! function_exists( 'd' ) ) {
-
-				echo "<pre>";
-				print_r( $value );
-				echo "</pre>";
-
-				debug( $value );
-
-				die();
-			}
-			\ddd( $value );
-		});
+	function ddd( $log ) {
+		Debug::ddd( $log );
 	}
 }
