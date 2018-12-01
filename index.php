@@ -30,8 +30,17 @@ Domain Path: Domain Path
 */
 
 require( __DIR__ . '/vendor/autoload.php' );
-// Kint::enabled(false);
-debug( 'Example' );
-debug( ['key' => 'value'] );
-d( 'Example' );
-d(  ['key' => 'value']  );
+
+/**
+ * debug_example
+ */
+function debug_example() {
+
+    debug( 'Example' );
+    debug( ['key' => 'value'] );
+    d( 'Example' );
+    d(  ['key' => 'value']  );
+
+}
+
+add_action( 'plugins_loaded', 'debug_example' );
