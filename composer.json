@@ -9,11 +9,11 @@
         }
     ],
     "require": {
-        "kint-php/kint" : "^3.1",
-        "filp/whoops": "^2.3"
+        "kint-php/kint" : "^3.1"
     },
     "require-dev": {
-        "lucatume/wp-browser": "~2.2"
+        "lucatume/wp-browser": "~2.2",
+        "filp/whoops": "^2.3"
     },
     "autoload": {
         "files": [
