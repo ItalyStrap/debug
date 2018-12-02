@@ -44,3 +44,10 @@ function debug_example() {
 }
 
 add_action( 'wp_footer', 'debug_example' );
+
+//
+// Use:
+// if ( ! is_debug() ) {
+    // Kint::enabled( false );
+// }
+// In your plugin to disable Kint in prouction env

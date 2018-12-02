@@ -21,13 +21,18 @@ function setup_whoops() {
 
 setup_whoops();
 
+
+// if ( ! class_exists( 'Kint' ) ) {
+// 	return;
+// }
 /**
  * If is not debug active disable Kint
  * https://kint-php.github.io/kint/
  */
-if ( ! is_debug() ) {
-	Kint::enabled( false );
-}
+// if ( ! is_debug() ) {
+	// Kint::enabled( false );
+	// \Italystrap\Debug\Debug::enable_kint(false);
+// }
 
 
 
