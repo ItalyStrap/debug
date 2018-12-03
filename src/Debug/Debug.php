@@ -66,10 +66,10 @@ class Debug {
 	public static function d( $log ) {
 	
 		echo "<pre>";
-		print_r( $value );
+		print_r( $log );
 		echo "</pre>";
 
-		self::log( $value );
+		self::log( $log );
 	}
 
 	/**
@@ -81,10 +81,10 @@ class Debug {
 	public static function ddd( $log ) {
 
 		echo "<pre>";
-		print_r( $value );
+		print_r( $log );
 		echo "</pre>";
 
-		self::log( $value );
+		self::log( $log );
 
 		die();
 	}

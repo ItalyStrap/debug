@@ -42,14 +42,14 @@ if ( ! function_exists( 'debug' ) ) {
 	}
 }
 
-if ( ! function_exists( 'd' ) ) {
-	function d( $log ) {
-		Debug::d( $log );
-	}
-}
+// if ( ! function_exists( 'd' ) ) {
+// 	function d( $log ) {
+// 		Debug::d( $log );
+// 	}
+// }
 
-if ( ! function_exists( 'ddd' ) ) {
-	function ddd( $log ) {
-		Debug::ddd( $log );
-	}
-}
+// if ( ! function_exists( 'ddd' ) ) {
+// 	function ddd( $log ) {
+// 		Debug::ddd( $log );
+// 	}
+// }
