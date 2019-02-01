@@ -31,6 +31,17 @@ if ( ! function_exists( 'is_script_debug' ) ) {
 	}
 }
 
+if ( ! function_exists( 'is_italystrap_debug' ) ) {
+	/**
+	 * Print debug output on debug.log file
+	 *
+	 * @param mixed $log The input value.
+	 */
+	function is_italystrap_debug() {
+		return Debug::is_italystrap_debug();
+	}
+}
+
 if ( ! function_exists( 'debug' ) ) {
 	/**
 	 * Print debug output on debug.log file
@@ -41,15 +52,3 @@ if ( ! function_exists( 'debug' ) ) {
 		Debug::log( $log );
 	}
 }
-
-// if ( ! function_exists( 'd' ) ) {
-// 	function d( $log ) {
-// 		Debug::d( $log );
-// 	}
-// }
-
-// if ( ! function_exists( 'ddd' ) ) {
-// 	function ddd( $log ) {
-// 		Debug::ddd( $log );
-// 	}
-// }

@@ -5,7 +5,7 @@ Description: Classes and functions for handling debugging
 Plugin URI: https://italystrap.com
 Author: Enea Overclokk
 Author URI: https://italystrap.com
-Version: 1.0
+Version: 10.0
 License: GPL2
 Text Domain: Text Domain
 Domain Path: Domain Path
@@ -39,7 +39,7 @@ function debug_example() {
     debug( 'Example' );
     debug( ['key' => 'value'] );
     d( 'Example' );
-    d(  ['key' => 'value']  );
+    d( ['key' => 'value'] );
 
 }
 

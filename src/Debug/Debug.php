@@ -36,6 +36,15 @@ class Debug {
 	}
 
 	/**
+	 * Is ItalyStrap Dev Debug
+	 *
+	 * @return bool Return true if SCRIPT_DEBUG is active
+	 */
+	public static function is_italystrap_debug() {
+		return (bool) defined( 'ITALYSTRAP_DEBUG' ) && ITALYSTRAP_DEBUG;
+	}
+
+	/**
 	 * Write to log file
 	 *
 	 * @param  string $value [description]
@@ -47,6 +56,19 @@ class Debug {
 			return;
 		}
 
+		if ( is_bool( $log ) ) {
+			$log = $log ? 'true' : 'false';
+		}
+
+		/**
+		 * __FILE__
+		 * __LINE__
+		 * https://stackoverflow.com/questions/1252529/get-code-line-and-file-thats-executing-the-current-function-in-php
+		 */
+		$bt = debug_backtrace();
+		$caller = array_shift( $bt );
+
+		error_log( print_r( $caller['file'] . ' Line: ' . $caller['line'], true ) );
 		error_log( print_r( $log, true ) );
 
 		// if ( is_array( $log ) || is_object( $log ) ) {
@@ -54,38 +76,6 @@ class Debug {
 		// } else {
 		//  error_log( $log );
 		// }
-	
-	}
 
-	/**
-	 * Write to log file
-	 *
-	 * @param  string $value [description]
-	 * @return string        [description]
-	 */
-	public static function d( $log ) {
-	
-		echo "<pre>";
-		print_r( $log );
-		echo "</pre>";
-
-		self::log( $log );
-	}
-
-	/**
-	 * Write to log file
-	 *
-	 * @param  string $value [description]
-	 * @return string        [description]
-	 */
-	public static function ddd( $log ) {
-
-		echo "<pre>";
-		print_r( $log );
-		echo "</pre>";
-
-		self::log( $log );
-
-		die();
 	}
 }
