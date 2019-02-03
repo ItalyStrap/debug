@@ -35,4 +35,4 @@ setup_whoops();
  * If is not debug active disable Kint
  * https://kint-php.github.io/kint/
  */
-Kint::$enabled_mode = is_debug();
+Kint\Kint::$enabled_mode = is_debug();
