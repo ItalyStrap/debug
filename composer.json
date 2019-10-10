@@ -1,6 +1,6 @@
 {
     "name": "italystrap/debug",
-    "description": "Classes and functions for handling debugging",
+    "description": "Classes and functions for handling debug",
     "type": "wordpress-plugin",
     "authors": [
         {
@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php" : ">=5.3",
+        "php" : ">=7.0",
         "kint-php/kint" : "^3.1",
         "filp/whoops": "^2.3"
     },

@@ -36,6 +36,7 @@ if ( ! function_exists( 'is_italystrap_debug' ) ) {
 	 * Print debug output on debug.log file
 	 *
 	 * @param mixed $log The input value.
+	 * @return
 	 */
 	function is_italystrap_debug() {
 		return Debug::is_italystrap_debug();
@@ -48,7 +49,7 @@ if ( ! function_exists( 'debug' ) ) {
 	 *
 	 * @param mixed $log The input value.
 	 */
-	function debug( $log ) {
-		Debug::log( $log );
+	function debug( ...$logs ) {
+		Debug::log( ...$logs );
 	}
 }

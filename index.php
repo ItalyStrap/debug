@@ -36,10 +36,17 @@ require( __DIR__ . '/vendor/autoload.php' );
  */
 function debug_example() {
 
-    debug( 'Example' );
-    debug( ['key' => 'value'] );
-    d( 'Example' );
-    d( ['key' => 'value'] );
+//    debug( 'Example', 'Another example' );
+//    debug( ['key' => 'value'], [ 'ddd', 'esdf' ] );
+//	$obj = new stdClass();
+//	$obj->test = 'test';
+
+
+
+
+//    debug($obj);
+//    d( 'Example' );
+//    d( ['key' => 'value'] );
 
 }
 
