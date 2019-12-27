@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php" : ">=7.0",
+        "php" : ">=7.2",
         "kint-php/kint" : "^3.3",
         "filp/whoops": "^2.6",
         "symfony/var-dumper": "^5.0"
