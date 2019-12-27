@@ -33,6 +33,7 @@ require( __DIR__ . '/vendor/autoload.php' );
 
 /**
  * debug_example
+ * @todo Maybe interesting https://stackify.com/php-try-catch-php-exception-tutorial/
  */
 function debug_example() {
 

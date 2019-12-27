@@ -1,10 +1,31 @@
 # ItalyStrap Debug
 
 [![Build Status](https://travis-ci.org/ItalyStrap/debug.svg?branch=master)](https://travis-ci.org/ItalyStrap/debug)
+[![Latest Stable Version](https://img.shields.io/packagist/v/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
+[![Total Downloads](https://img.shields.io/packagist/dt/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
+[![Latest Unstable Version](https://img.shields.io/packagist/vpre/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
+[![License](https://img.shields.io/packagist/l/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/italystrap/debug)
 
 Classes and functions for handling debugging
 
-## How tu use it
+## Table Of Contents
+
+* [Installation](#installation)
+* [Basic Usage](#basic-usage)
+* [Advanced Usage](#advanced-usage)
+* [Contributing](#contributing)
+* [License](#license)
+
+## Installation
+
+The best way to use this package is through Composer:
+
+```CMD
+composer require italystrap/cleaner
+```
+
+## Basic Usage
 
 Simply add the below code into your wp-config.php file
 
@@ -28,7 +49,23 @@ d();
 debug( $log );
 ```
 
-## In case of PHP arror
-
 For handling php errors it will be use Whoops that will display
 a screen with the full stack of information about the error.
+
+## Advanced Usage
+
+> TODO
+
+## Contributing
+
+All feedback / bug reports / pull requests are welcome.
+
+## License
+
+Copyright (c) 2019 Enea Overclokk, ItalyStrap
+
+This code is licensed under the [MIT](LICENSE).
+
+## Credits
+
+> TODO

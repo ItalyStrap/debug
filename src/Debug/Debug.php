@@ -55,21 +55,22 @@ class Debug {
 			return;
 		}
 
+		/**
+		 * __FILE__
+		 * __LINE__
+		 * https://stackoverflow.com/questions/1252529/get-code-line-and-file-thats-executing-the-current-function-in-php
+		 */
+		$bt = \debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS );
+
+		if ( \is_array( $bt[1] ) ) {
+			\error_log( \print_r( 'File: ' . $bt[1]['file'] . ' | Line: ' . $bt[1]['line'], true ) );
+		}
+
 		foreach ( $logs as $log ) {
 
-			if ( is_bool( $log ) ) {
-				$log = $log ? 'true' : 'false';
-			}
-
-			/**
-			 * __FILE__
-			 * __LINE__
-			 * https://stackoverflow.com/questions/1252529/get-code-line-and-file-thats-executing-the-current-function-in-php
-			 */
-			$bt = \debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS );
-
-			if ( is_array( $bt[1] ) ) {
-				\error_log( \print_r( 'File: ' . $bt[1]['file'] . ' | Line: ' . $bt[1]['line'], true ) );
+			if ( \is_bool( $log ) ) {
+//				$log = $log ? 'true' : 'false';
+				$log = \json_encode( $log );
 			}
 
 			\error_log( \print_r( $log, true ) );
