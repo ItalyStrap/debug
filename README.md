@@ -1,6 +1,5 @@
 # ItalyStrap Debug
 
-[![Build Status](https://travis-ci.org/ItalyStrap/debug.svg?branch=master)](https://travis-ci.org/ItalyStrap/debug)
 [![Latest Stable Version](https://img.shields.io/packagist/v/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
 [![Total Downloads](https://img.shields.io/packagist/dt/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
 [![Latest Unstable Version](https://img.shields.io/packagist/vpre/italystrap/debug.svg)](https://packagist.org/packages/italystrap/debug)
@@ -22,7 +21,7 @@ Classes and functions for handling debugging
 The best way to use this package is through Composer:
 
 ```CMD
-composer require italystrap/cleaner
+composer require italystrap/debug
 ```
 
 ## Basic Usage

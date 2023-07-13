@@ -9,13 +9,13 @@
         }
     ],
     "require": {
-        "php" : ">=7.2",
-        "kint-php/kint" : "^3.3",
-        "filp/whoops": "^2.6",
-        "symfony/var-dumper": "^5.0"
+        "php" : ">=7.4",
+        "kint-php/kint" : "^5.0",
+        "filp/whoops": "^2.15",
+        "symfony/var-dumper": "^5.2"
     },
     "require-dev": {
-        "lucatume/wp-browser": "~2.2"
+        "lucatume/wp-browser": "^3.1"
     },
     "autoload": {
         "psr-4": {

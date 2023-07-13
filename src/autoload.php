@@ -2,13 +2,13 @@
 /**
  * Load internal files
  *
- * @var array
+ * @var array $file
  */
-$files = [
-	'debug.php',
-	'compat.php',
-];
-
-foreach ( $files as $file ) {
-    require_once( $file );
-}
+(function(array $files){
+    foreach ($files as $file) {
+        require_once($file);
+    }
+})([
+    'debug.php',
+    'compat.php',
+]);

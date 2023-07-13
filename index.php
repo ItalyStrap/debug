@@ -1,15 +1,13 @@
 <?php
-/*
-Plugin Name: Debug
-Description: Classes and functions for handling debugging
-Plugin URI: https://italystrap.com
-Author: Enea Overclokk
-Author URI: https://italystrap.com
-Version: 10.0
-License: GPL2
-Text Domain: Text Domain
-Domain Path: Domain Path
-*/
+/**
+ * Plugin Name: Debug
+ * Description: Classes and functions for handling debugging
+ * Plugin URI: https://italystrap.com
+ * Author: Enea Overclokk
+ * Author URI: https://italystrap.com
+ * Version: 10.0
+ * License: MIT
+ */
 
 /*
 
@@ -29,33 +27,9 @@ Domain Path: Domain Path
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-require( __DIR__ . '/vendor/autoload.php' );
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * debug_example
  * @todo Maybe interesting https://stackify.com/php-try-catch-php-exception-tutorial/
  */
-function debug_example() {
-
-//    debug( 'Example', 'Another example' );
-//    debug( ['key' => 'value'], [ 'ddd', 'esdf' ] );
-//	$obj = new stdClass();
-//	$obj->test = 'test';
-
-
-
-
-//    debug($obj);
-//    d( 'Example' );
-//    d( ['key' => 'value'] );
-
-}
-
-add_action( 'wp_footer', 'debug_example' );
-
-//
-// Use:
-// if ( ! is_debug() ) {
-    // Kint::enabled( false );
-// }
-// In your plugin to disable Kint in prouction env

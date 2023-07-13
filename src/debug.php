@@ -53,3 +53,16 @@ if ( ! function_exists( 'debug' ) ) {
 		Debug::log( ...$logs );
 	}
 }
+
+if ( ! function_exists( 'lazyd' ) ) {
+    /**
+     * Print debug output on debug.log file
+     *
+     * @param mixed $log The input value.
+     */
+    function lazyd(...$args): void {
+        \add_action('shutdown', static function () use ($args) {
+            \d(...$args);
+        });
+    }
+}
