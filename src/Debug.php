@@ -13,7 +13,13 @@ class Debug
      */
     public function isDebug(): bool
     {
-        return \defined('WP_DEBUG') && WP_DEBUG;
+        $is_debug = \defined('WP_DEBUG') && WP_DEBUG;
+
+        if (\function_exists('apply_filters')) {
+            return \apply_filters('italystrap.debug', $is_debug);
+        }
+
+        return $is_debug;
     }
 
     /**
@@ -24,16 +30,6 @@ class Debug
     public function isScriptDebug(): bool
     {
         return \defined('SCRIPT_DEBUG') && SCRIPT_DEBUG;
-    }
-
-    /**
-     * Is ItalyStrap Dev Debug
-     *
-     * @return bool Return true if SCRIPT_DEBUG is active
-     */
-    public function isItalyStrapDebug(): bool
-    {
-        return \defined('ITALYSTRAP_DEBUG') && ITALYSTRAP_DEBUG;
     }
 
     /**

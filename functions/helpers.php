@@ -28,19 +28,6 @@ if (! function_exists('is_script_debug')) {
     }
 }
 
-if (! function_exists('is_italystrap_debug')) {
-    /**
-     * Print debug output on debug.log file
-     *
-     * @param mixed $log The input value.
-     * @return
-     */
-    function is_italystrap_debug(): bool
-    {
-        return (new Debug())->isItalyStrapDebug();
-    }
-}
-
 if (! function_exists('debug')) {
     /**
      * Print debug output on debug.log file
