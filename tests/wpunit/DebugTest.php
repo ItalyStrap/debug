@@ -1,46 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
+namespace ItalyStrap\Tests\WPUnit;
+
 use ItalyStrap\Debug\Debug;
+use ItalyStrap\Tests\WPTestCase;
 
-class DebugTest extends \Codeception\TestCase\WPTestCase
+class DebugTest extends WPTestCase
 {
-
-    public function setUp(): void
+    public function testItShouldReturnTrue()
     {
-        // before
-        parent::setUp();
-
-        // your set up methods here
-    }
-
-    public function tearDown(): void
-	{
-        // your tear down methods here
-
-        // then
-        parent::tearDown();
-    }
-
-    /**
-     * @test
-     * it should be instantiatable
-     */
-    public function it_should_be_instantiatable()
-    {
-        $sut = new Debug();
-        $this->assertInstanceOf( '\ItalyStrap\Debug\Debug', $sut );
-    }
-
-    /**
-     * @test it_should_be_return_true
-     */
-    public function it_should_be_return_true()
-    {
-        if ( ! defined( 'WP_DEBUG' ) ) {
-            define( 'WP_DEBUG', true );
+        if (!defined('WP_DEBUG')) {
+            define('WP_DEBUG', true);
         }
 
-        $this->assertTrue( Debug::is_debug() );
+        $this->assertTrue((new Debug())->is_debug());
     }
-
 }
