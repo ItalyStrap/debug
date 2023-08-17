@@ -54,7 +54,24 @@ if ( ! function_exists( 'debug' ) ) {
 	}
 }
 
-if ( ! function_exists( 'lazyd' ) ) {
+if ( ! function_exists( 'dlog' ) ) {
+	/**
+	 * Print debug output on debug.log file
+	 *
+	 * @param mixed $log The input value.
+	 */
+	function dlog( ...$logs ) {
+		Debug::log( ...$logs );
+	}
+}
+
+if ( ! function_exists( 'wlog' ) ) {
+    function wlog( ...$logs ) {
+        Debug::wlog( ...$logs );
+    }
+}
+
+if ( ! function_exists( 'lazyd' ) && \function_exists('add_action') ) {
     /**
      * Print debug output on debug.log file
      *

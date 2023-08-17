@@ -17,9 +17,9 @@ use Whoops\Run;
         return;
     }
 
-    if (!is_italystrap_debug()) {
-        return;
-    }
+//    if (!is_italystrap_debug()) {
+//        return;
+//    }
 
     $whoops = new Run();
 

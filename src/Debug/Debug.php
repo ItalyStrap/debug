@@ -49,11 +49,16 @@ class Debug {
 	 *
 	 * @param array $logs
 	 */
-	public static function log( ...$logs ) {
+	public static function log( ...$logs ): void
+    {
 	
-		if ( ! self::is_debug() ) {
+		if (!self::is_debug()) {
 			return;
 		}
+
+        $separator = '----------------------------------------';
+
+        \error_log(\print_r($separator . 'DEBUG START' . $separator, true));
 
 		/**
 		 * __FILE__
@@ -62,25 +67,48 @@ class Debug {
 		 */
 		$bt = \debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS );
 
-		if ( \is_array( $bt[1] ) ) {
-			\error_log( \print_r( 'File: ' . $bt[1]['file'] . ' | Line: ' . $bt[1]['line'], true ) );
+		if ( \is_array($bt[1]) ) {
+			\error_log(\print_r('File: ' . $bt[1]['file'], true));
+			\error_log(\print_r('Line: ' . $bt[1]['line'], true));
 		}
 
-		foreach ( $logs as $log ) {
-
-			if ( \is_bool( $log ) ) {
-//				$log = $log ? 'true' : 'false';
-				$log = \json_encode( $log );
+		foreach ($logs as $log) {
+			if (\is_bool($log)) {
+				$log = \json_encode($log);
 			}
 
-			\error_log( \print_r( $log, true ) );
+			\error_log(\print_r($log, true));
+//			\error_log(\var_export($log, true));
 		}
 
-		// if ( is_array( $log ) || is_object( $log ) ) {
-		//  error_log( print_r( $log, true ) );
-		// } else {
-		//  error_log( $log );
-		// }
-
+        \error_log(\print_r($separator . 'DEBUG END' . $separator, true));
 	}
+
+    public static function wlog(...$logs): void
+    {
+        if (!\function_exists('do_action')) {
+            return;
+        }
+
+        $separator = '----------------------------------------';
+
+        \do_action( 'wonolog.log', \print_r($separator . 'DEBUG START' . $separator, true));
+
+        foreach ($logs as $log) {
+            if (\is_bool($log)) {
+                $log = \json_encode($log);
+            }
+
+            \do_action( 'wonolog.log',
+                [
+                    'message' => \print_r($log, true),
+                    'channel' => 'DEBUG',
+                    'level'   => 100,
+                    'context' => [],
+                ]
+            );
+        }
+
+        \do_action( 'wonolog.log', \print_r($separator . 'DEBUG END' . $separator, true));
+    }
 }
