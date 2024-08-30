@@ -26,7 +26,7 @@ namespace ItalyStrap\Debug;
 /**
  * Asset_Queued
  */
-class AssetQueued
+class AssetQueuedLegacy
 {
     // Funzione per vedere dipendenze e script caricati nel WP-HEAD
     //http://www.targetweb.it/eliminare-script-caricati-nel-wp-head-di-wordpress/

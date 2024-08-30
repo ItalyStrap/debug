@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Plugin Name: Debug
  * Description: Helper functions for handling debugging in WordPress and PHP development.

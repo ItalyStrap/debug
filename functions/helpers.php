@@ -72,3 +72,19 @@ if (! function_exists('lazyd') && \function_exists('add_action')) {
         });
     }
 }
+
+if (! function_exists('listenersForEvent')) {
+    /**
+     * @param string $hook
+     */
+    function listenersForEvent(string $hook): void
+    {
+        global $wp_filter;
+
+        if (empty($wp_filter[$hook])) {
+            return;
+        }
+
+        \d($wp_filter[$hook]);
+    }
+}

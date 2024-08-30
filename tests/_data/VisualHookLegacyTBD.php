@@ -18,7 +18,7 @@ use ItalyStrap\Event\SubscriberInterface;
 /**
  * Visual_Hook
  */
-class VisualHook implements SubscriberInterface
+class VisualHookLegacyTBD implements SubscriberInterface
 {
     /**
      * Returns an array of hooks that this subscriber wants to register with
@@ -51,7 +51,7 @@ class VisualHook implements SubscriberInterface
     /**
      *
      */
-    public function __construct(Hooked $hooked, array $options = array())
+    public function __construct(ListenerFinder $hooked, array $options = array())
     {
         $this->hooked = $hooked;
         $this->options = $options;
@@ -138,7 +138,7 @@ class VisualHook implements SubscriberInterface
         printf(
             '<div class="filter-container"><p class="filter-name">%s</p>%s</div>',
             current_filter(),
-            empty($this->options['show_hooked_callable']) ? '' : $this->hooked->getHookedList(current_filter(), false)
+            empty($this->options['show_hooked_callable']) ? '' : $this->hooked->find(current_filter(), false)
         );
     }
 
