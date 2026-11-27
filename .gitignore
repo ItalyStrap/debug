@@ -1,5 +1,10 @@
+# Composer
 /vendor/
+/composer.lock
 
+# Bone
+bone.*
+
+# Project
 *.local
 codeception.yml
-composer.lock
